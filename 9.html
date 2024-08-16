@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Error message </h1>
+    <p></p>
+    <script>
+        function fetchData() {
+
+            const url = 'https://jsonplaceholder.typicode.com/posts/123456789';
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        const error = "response error";
+                        document.querySelector('p').textContent=error;
+          
+                    }
+                    return response.json();
+                })
+        }
+        fetchData();
+        
+    </script>
+</body>
+</html>
